@@ -14,7 +14,7 @@
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Text Encryption</h5>
-        <form name="text-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()"  action="" novalidate>
+        <form name="text-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()" novalidate>
             <div class="form-floating mb-3" >
                 <textarea name="text-encrypt" class="form-control" placeholder="Enter Input Text here" id="floatingTextarea" style="height: 100px"></textarea>
                 <label for="floatingTextarea">Input Text</label>
