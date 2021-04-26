@@ -14,7 +14,7 @@
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Text Encryption</h5>
-        <form name="text-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()"  action="" novalidate>
+        <form name="text-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()"  action="${pageContext.request.contextPath}/TextEncryptServlet" novalidate>
             <div class="form-floating mb-3" >
                 <textarea name="text-encrypt" class="form-control" placeholder="Enter Input Text here" id="floatingTextarea" style="height: 100px"></textarea>
                 <label for="floatingTextarea">Input Text</label>
@@ -23,9 +23,6 @@
                 <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
             </div>
-            <div class="invalid-feedback">
-                Please provide a valid city.
-            </div>
             <button type="submit" class="btn btn-primary mt-4" >Submit</button>
         </form>
     </div>
@@ -33,8 +30,15 @@
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Encrypted Text</h5>
+        <%
+            Object attributeValue = request.getAttribute("encrypted_text");
+            if(attributeValue == null) {
+                attributeValue = "";
+            }
+
+        %>
         <form method="get">
-            <textarea class="form-control" placeholder="Output Text" id="floatingTextarea1" disabled readonly style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Output Text" id="floatingTextarea1" disabled readonly style="height: 100px"><%= attributeValue%></textarea>
         </form>
     </div>
 </div>
