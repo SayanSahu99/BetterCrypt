@@ -14,9 +14,9 @@
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Image Encryption</h5>
-        <form name="image-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()"  action="${pageContext.request.contextPath}/ImageEncryptServlet" novalidate>
+        <form name="image-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()" enctype="multipart/form-data" action="${pageContext.request.contextPath}/ImageEncryptServlet" novalidate>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="inputGroupFile02">
+                <input name="file" type="file" class="form-control" id="inputGroupFile02" accept="image/*" >
             </div>
             <div class="form-floating">
                 <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">

@@ -7,16 +7,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.file.FileStore;
 
-
-@WebServlet(name = "ImageEncryptServlet", value = "/ImageEncryptServlet")
-@MultipartConfig(
-        fileSizeThreshold = 1024 * 1024, // 1 MB
-        maxFileSize = 1024 * 1024 * 10,      // 10 MB
-        maxRequestSize = 1024 * 1024 * 100   // 100 MB
-)
-public class ImageEncryptServlet extends HttpServlet {
+@WebServlet(name = "ImageDecryptServlet", value = "/ImageDecryptServlet")
+public class ImageDecryptServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
@@ -27,12 +20,12 @@ public class ImageEncryptServlet extends HttpServlet {
         // read form fields
         String secretKey = request.getParameter("floatingKey");
 
-        Part part = request.getPart("file");
+        Part part = request.getPart("image");
         String fileName = part.getSubmittedFileName();
         String filePath = "C:\\upload\\" + fileName;
         part.write(filePath);
 
-        ImageEncryptAES.encrypt(filePath, secretKey);
+        ImageDecryptAES.decrypt(filePath, secretKey);
 
         PrintWriter out = response.getWriter();
         String filepath = "C:\\upload\\";
@@ -55,7 +48,7 @@ public class ImageEncryptServlet extends HttpServlet {
             System.out.println("Failed to delete the file.");
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("/image-encrypt.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/image-decrypt.jsp");
         rd.forward(request, response);
     }
 }
