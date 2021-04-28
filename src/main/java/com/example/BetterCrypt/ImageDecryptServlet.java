@@ -22,19 +22,20 @@ public class ImageDecryptServlet extends HttpServlet {
         // read form fields
         String secretKey = request.getParameter("floatingKey");
 
+        String dir = getServletContext().getRealPath("/");
+
         Part part = request.getPart("file");
         String fileName = part.getSubmittedFileName();
-        String filePath = "C:\\upload\\" + fileName;
+        String filePath = dir + fileName;
         part.write(filePath);
 
-        ImageDecryptAES.decrypt("C:\\upload\\", fileName ,secretKey);
+        ImageDecryptAES.decrypt(dir, fileName ,secretKey);
 
         PrintWriter out = response.getWriter();
-        String filepath = "C:\\upload\\";
         response.setContentType("APPLICATION/OCTET-STREAM");
         response.setHeader("Content-Disposition","attachment; filename=\"" + fileName + "\"");
 
-        FileInputStream fileInputStream = new FileInputStream(filepath + fileName);
+        FileInputStream fileInputStream = new FileInputStream(dir + fileName);
 
         int i;
         while ((i=fileInputStream.read()) != -1) {
