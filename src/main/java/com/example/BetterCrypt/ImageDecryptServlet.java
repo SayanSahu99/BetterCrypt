@@ -3,12 +3,14 @@ package com.example.BetterCrypt;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 @WebServlet(name = "ImageDecryptServlet", value = "/ImageDecryptServlet")
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024, // 1 MB
+        maxFileSize = 1024 * 1024 * 10,      // 10 MB
+        maxRequestSize = 1024 * 1024 * 100   // 100 MB
+)
 public class ImageDecryptServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,12 +22,12 @@ public class ImageDecryptServlet extends HttpServlet {
         // read form fields
         String secretKey = request.getParameter("floatingKey");
 
-        Part part = request.getPart("image");
+        Part part = request.getPart("file");
         String fileName = part.getSubmittedFileName();
         String filePath = "C:\\upload\\" + fileName;
         part.write(filePath);
 
-        ImageDecryptAES.decrypt(filePath, secretKey);
+        ImageDecryptAES.decrypt("C:\\upload\\", fileName ,secretKey);
 
         PrintWriter out = response.getWriter();
         String filepath = "C:\\upload\\";
@@ -40,6 +42,7 @@ public class ImageDecryptServlet extends HttpServlet {
         }
         fileInputStream.close();
         out.close();
+
 
         File myObj = new File(filePath);
         if (myObj.delete()) {

@@ -1,14 +1,10 @@
 package com.example.BetterCrypt;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
 
 public class ImageDecryptAES {
 
-    public static void decrypt(String filePath, String secrectkey)
+    public static void decrypt(String filePath, String fileName, String secrectkey)
             throws FileNotFoundException, IOException
     {
 
@@ -16,12 +12,11 @@ public class ImageDecryptAES {
 
         // Selecting a Image for Decryption.
 
-        FileInputStream fis = new FileInputStream(
-                filePath);
+        FileInputStream fis = new FileInputStream(filePath+fileName);
 
         // Converting image into byte array,it will
         // Create a array of same size as image.
-        byte data[] = new byte[fis.available()];
+        byte[] data = new byte[fis.available()];
 
         // Read the array
 
@@ -37,11 +32,21 @@ public class ImageDecryptAES {
         }
 
         // Opening file for writting purpose
-        FileOutputStream fos = new FileOutputStream(
-                filePath);
+        FileOutputStream fos = new FileOutputStream(filePath+fileName);
 
         // Writting Decrypted data on Image
         fos.write(data);
+
+//        File oldName =
+//                new File(filePath+fileName);
+//        File newName =
+//                new File(filePath+"decrypted.PNG");
+//
+//        if (oldName.renameTo(newName))
+//            System.out.println("Renamed successfully");
+//        else
+//            System.out.println("Error");
+
         fos.close();
         fis.close();
         System.out.println("Decyption Done...");
