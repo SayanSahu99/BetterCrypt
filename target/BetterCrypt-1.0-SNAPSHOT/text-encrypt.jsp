@@ -42,6 +42,15 @@
         </form>
     </div>
 </div>
+<div class="card mx-5 my-5" >
+    <div class="card-body">
+        <h5 class="card-title">Generated Key</h5>
+        <form >
+            <input class="form-control" placeholder="Output Text" id="floatingTextarea2" disabled readonly style="height: 100px">
+            <button type="button" class="btn btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
+        </form>
+    </div>
+</div>
 <script>
     'use strict'
 
@@ -110,6 +119,25 @@
         else {
             return true;
         }
+    }
+    function generateUUID()
+    {
+        var d = new Date().getTime();
+        var keyField = document.getElementById("floatingTextarea2");
+        var keyField1 = document.getElementById("floatingKey");
+        if( window.performance && typeof window.performance.now === "function" )
+        {
+            d += performance.now();
+        }
+
+        var uuid = 'xxx-xxx-4xx-yxxx'.replace(/[xy]/g, function(c)
+        {
+            var r = (d + Math.random()*16)%16 | 0;
+            d = Math.floor(d/16);
+            return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+        });
+        keyField.value=uuid;
+        keyField1.value=uuid;
     }
 </script>
 </body>
