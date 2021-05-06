@@ -33,7 +33,10 @@ public class ImageEncryptServlet extends HttpServlet {
         String filePath = dir+fileName;
         part.write(filePath);
 
-        ImageEncryptAES.encrypt(filePath, secretKey);
+        //ImageEncryptAES.encrypt(filePath, secretKey);
+
+        fileName = ImageEncDec.encrypt(dir, filePath, secretKey, fileName);
+        String EncryptedfilePath = dir+fileName;
 
         PrintWriter out = response.getWriter();
         response.setContentType("APPLICATION/OCTET-STREAM");
@@ -48,7 +51,16 @@ public class ImageEncryptServlet extends HttpServlet {
         fileInputStream.close();
         out.close();
 
+        // Delete original file
         File myObj = new File(filePath);
+        if (myObj.delete()) {
+            System.out.println("Deleted the file: " + myObj.getName());
+        } else {
+            System.out.println("Failed to delete the file.");
+        }
+
+        // Delete encrypted file
+        myObj = new File(EncryptedfilePath);
         if (myObj.delete()) {
             System.out.println("Deleted the file: " + myObj.getName());
         } else {

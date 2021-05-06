@@ -35,6 +35,7 @@ public class ImageEncryptAES {
         for (byte b : data) {
             data[i] = (byte)(b ^ key);
             i++;
+            System.out.println("Byte: "+b);
         }
 
         // Opening a file for writing purpose

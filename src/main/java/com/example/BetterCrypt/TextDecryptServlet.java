@@ -19,9 +19,16 @@ public class TextDecryptServlet extends HttpServlet {
         String inputText = request.getParameter("text-decrypt");
         String secretKey = request.getParameter("floatingKey");
 
+        inputText = inputText.replaceAll(String.valueOf((char)194),"");
+
+
         // do some processing here...
 
-        request.setAttribute("decrypted_text", inputText);
+        String nineDec = ascii.decrypt(inputText);
+        String AESDecryptedText = AES.decrypt(nineDec,secretKey);
+
+        //assert AESDecryptedText != null;
+        request.setAttribute("decrypted_text", AESDecryptedText.replaceAll(String.valueOf((char)8218),"").replace(String.valueOf((char)194),"").replace(String.valueOf((char)195),""));
         RequestDispatcher rd = request.getRequestDispatcher("/text-decrypt.jsp");
         rd.forward(request, response);
     }

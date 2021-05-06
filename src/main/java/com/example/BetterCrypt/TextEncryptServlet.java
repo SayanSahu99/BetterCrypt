@@ -21,7 +21,10 @@ public class TextEncryptServlet extends HttpServlet {
 
         // do some processing here...
 
-        request.setAttribute("encrypted_text", inputText);
+        String AESEncryptedText = AES.encrypt(inputText, secretKey);
+        String ASCII_ENC = ascii.encrypt(AESEncryptedText);
+
+        request.setAttribute("encrypted_text", ASCII_ENC);
         RequestDispatcher rd = request.getRequestDispatcher("/text-encrypt.jsp");
         rd.forward(request, response);
     }

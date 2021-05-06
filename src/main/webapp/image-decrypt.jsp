@@ -16,7 +16,7 @@
         <h5 class="card-title">Image Decryption</h5>
         <form name="image-decrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()" enctype="multipart/form-data" action="${pageContext.request.contextPath}/ImageDecryptServlet" novalidate>
             <div class="input-group mb-3">
-                <input name="file" type="file" class="form-control" id="inputGroupFile02">
+                <input name="file" type="file" class="form-control" id="inputGroupFile02" accept="image/*">
             </div>
             <div class="form-floating">
                 <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
