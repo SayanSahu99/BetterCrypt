@@ -7,10 +7,10 @@
 --%>
 <html>
 <head>
-    <title>Hello image decrypt</title>
+    <title>Image decryption</title>
 </head>
 <body>
-<%@include file="index.jsp" %>
+<%@include file="header.jsp" %>
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Image Decryption</h5>
