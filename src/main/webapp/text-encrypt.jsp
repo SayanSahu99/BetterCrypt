@@ -7,16 +7,16 @@
 --%>
 <html>
 <head>
-    <title>Hello text encrypt</title>
+    <title>Text encryption</title>
 </head>
 <body>
-<%@include file="index.jsp" %>
+<%@include file="header.jsp" %>
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Text Encryption</h5>
         <form name="text-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()"  action="${pageContext.request.contextPath}/TextEncryptServlet" novalidate>
             <div class="form-floating mb-3" >
-                <textarea name="text-encrypt" class="form-control" placeholder="Enter Input Text here" id="floatingTextarea" style="height: 100px"></textarea>
+                <textarea name="text-encrypt" class="form-control" placeholder="Enter Input Text here" id="floatingTextarea" style="height: 200px"></textarea>
                 <label for="floatingTextarea">Input Text</label>
             </div>
             <div class="form-floating">
@@ -38,7 +38,16 @@
 
         %>
         <form method="get">
-            <textarea class="form-control" placeholder="Output Text" id="floatingTextarea1" disabled readonly style="height: 100px"><%= attributeValue%></textarea>
+            <textarea class="form-control" placeholder="Output Text" id="floatingTextarea1" disabled readonly style="height: 200px"><%= attributeValue%></textarea>
+        </form>
+    </div>
+</div>
+<div class="card mx-5 my-5" >
+    <div class="card-body">
+        <h5 class="card-title">Generated Key</h5>
+        <form >
+            <input class="form-control" placeholder="Sample Key" id="floatingTextarea2" disabled readonly>
+            <button type="button" class="btn btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
         </form>
     </div>
 </div>
@@ -110,6 +119,25 @@
         else {
             return true;
         }
+    }
+    function generateUUID()
+    {
+        var d = new Date().getTime();
+        var keyField = document.getElementById("floatingTextarea2");
+        var keyField1 = document.getElementById("floatingKey");
+        if( window.performance && typeof window.performance.now === "function" )
+        {
+            d += performance.now();
+        }
+
+        var uuid = 'xxx-xxx-4xx-yxxx'.replace(/[xy]/g, function(c)
+        {
+            var r = (d + Math.random()*16)%16 | 0;
+            d = Math.floor(d/16);
+            return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+        });
+        keyField.value=uuid;
+        keyField1.value=uuid;
     }
 </script>
 </body>
