@@ -7,10 +7,10 @@
 --%>
 <html>
 <head>
-    <title>Hello image encrypt</title>
+    <title>Image encryption</title>
 </head>
 <body>
-<%@include file="index.jsp" %>
+<%@include file="header.jsp" %>
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Image Encryption</h5>
@@ -30,7 +30,7 @@
     <div class="card-body">
         <h5 class="card-title">Generated Key</h5>
         <form >
-            <input class="form-control" placeholder="Output Text" id="floatingTextarea2" disabled readonly style="height: 100px">
+            <input class="form-control" placeholder="Output Text" id="floatingTextarea2" disabled readonly >
             <button type="button" class="btn btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
         </form>
     </div>
