@@ -8,6 +8,7 @@
 <html>
 <head>
     <title>Image decryption</title>
+    <link rel="icon" type="image/x-icon" href="assets/BetterCryptLogo.ico" />
 </head>
 <body>
 <%@include file="header.jsp" %>

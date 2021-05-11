@@ -8,12 +8,22 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="icon" type="image/x-icon" href="assets/BetterCryptLogo1.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ruthie&display=swap" rel="stylesheet">
+    <style>
+        .navbar-brand {font-family: 'Ruthie', cursive !important;
+        font-size: 50px}
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container-fluid">
+        <span>
+        <img src="${pageContext.request.contextPath}/assets/img/BetterCryptLogo.png" width="70px"; height="70px">
         <a class="navbar-brand" href="index.jsp">BetterCrypt</a>
+            </span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

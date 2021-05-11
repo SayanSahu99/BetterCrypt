@@ -1,10 +1,10 @@
 @charset "UTF-8";
-/*!
+/*/
 * Start Bootstrap - Landing Page v5.1.0 (https://startbootstrap.com/theme/landing-page)
 * Copyright 2013-2021 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
 */
-/*!
+/*/
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -10025,8 +10025,7 @@ h3 {
 
 header.masthead {
   position: relative;
-  background-color: #343a40;
-  background: url("../assets/img/BetterCryptLogo.png") no-repeat center center;
+  background: #343a40 url("../assets/img/header.jpeg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -10081,7 +10080,7 @@ header.masthead h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("../assets/img/BetterCryptLogo.png") no-repeat center center;
+  background: url("../assets/img/header.jpeg") no-repeat center center;
   background-size: cover;
   padding-top: 7rem;
   padding-bottom: 7rem;
