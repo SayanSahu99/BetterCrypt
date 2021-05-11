@@ -3,6 +3,6 @@ applications:
   - name: BetterCrypt
     random-route: true
     path: apache-tomcat-9.0.43/webapps/BetterCrypt-1.0-SNAPSHOT.war
-    memory: 1G
+    memory: 128M
     instances: 1
     buildpack: java_buildpack
