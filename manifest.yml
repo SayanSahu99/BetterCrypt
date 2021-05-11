@@ -1,0 +1,6 @@
+applications:
+  - name: BetterCrypt-1.0-SNAPSHOT
+  random-route: true
+  memory: 128M
+  path: apache-tomcat-9.0.43/webapps/BetterCrypt-1.0-SNAPSHOT.war
+  buildpack: java_buildpack
