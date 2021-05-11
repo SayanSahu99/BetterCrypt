@@ -1,16 +1,16 @@
 package com.example.Security.Text;
 
+import com.example.Security.TextAlgorithm;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class NinesComplimentText {
 
-    public static String encrypt(String text) {
+    public String encrypt(String text) {
 
         String key = "10101010";
-
         StringBuilder comp_length = new StringBuilder();
 
         Map<Character, Integer> t = new HashMap<>();
@@ -85,25 +85,7 @@ public class NinesComplimentText {
             dec += 32;
             encryptedText.append(t1.get(dec));
         }
-
         encryptedText.append((char)170).append(comp_length);
-//
-//        System.out.println(nine);
-//        System.out.println(six);
-//        System.out.println(xor);
-//        System.out.println(one);
-//        System.out.println(encryptedText.toString());
-//        System.out.println(value);
-//        System.out.println("comp_len "+ comp_length);
-
-//        return encryptedText.toString();
-
-//        System.out.println("Nine: "+nine);
-//        System.out.println("Six: "+six);
-//        System.out.println("Xor: "+xor);
-//        System.out.println("One: "+one);
-//        System.out.println("Encrypt: "+encryptedText);
-
         return encryptedText.toString();
 
 
@@ -205,46 +187,8 @@ public class NinesComplimentText {
             decryptedText.append(t1.get(Integer.parseInt(s)));
         }
 
-
-
-
-
-//        System.out.println("\n");
-//        System.out.println(decimal);
-//        System.out.println(six);
-//        System.out.println(xor);
-//        System.out.println(one);
-//        System.out.println(nine);
-//        System.out.println("Mod Nine "+ mod_nine);
-//        System.out.println("decyprt "+ decryptedText);
-
         return decryptedText.toString();
     }
 
-    public static void main(String[] args) {
-        final String secretKey = "ssshhhhhhhhhhh!!";
-        Scanner in = new Scanner(System.in);
-        String txt = in.next();
-        String aes_enc = AES.encrypt(txt,secretKey);
-        String enc = encrypt(aes_enc);
-        String nine_dec = decrypt(enc);
 
-        String Aes_dec = AES.decrypt(nine_dec, secretKey);
-
-        System.out.println("AES enc: "+aes_enc);
-        System.out.println("nine enc: "+enc);
-        System.out.println("nine denc: "+nine_dec);
-        System.out.println("AES denc: "+Aes_dec);
-
-//        Scanner in = new Scanner(System.in);
-//        String txt = in.next();
-//        txt = "MY NAME";
-//        String enc = encrypt(txt);
-//        System.out.println("ENC: "+enc);
-//        String nine_dec = decrypt(enc);
-//        System.out.println("NINE_DEC: "+nine_dec);
-
-
-
-    }
 }

@@ -1,5 +1,7 @@
 package com.example.Security.Text;
 
+import com.example.Security.TextAlgorithm;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -9,11 +11,11 @@ import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-public class AES {
+public class AESText implements TextAlgorithm {
 
     private static SecretKeySpec secretKey;
 
-    public static void setKey(String myKey)
+    public void setKey(String myKey)
     {
         MessageDigest sha = null;
         try {
@@ -28,7 +30,7 @@ public class AES {
         }
     }
 
-    public static String encrypt(String strToEncrypt, String secret)
+    public String encrypt(String strToEncrypt, String secret)
     {
         try
         {
@@ -44,7 +46,7 @@ public class AES {
         return null;
     }
 
-    public static String decrypt(String strToDecrypt, String secret)
+    public String decrypt(String strToDecrypt, String secret)
     {
         try
         {
@@ -58,20 +60,6 @@ public class AES {
             System.out.println("Error while decrypting: " + e.toString());
         }
         return null;
-    }
-
-    public static void main(String[] args)
-    {
-        final String secretKey = "ssshhhhhhhhhhh!!!!";
-
-        String originalString = "how todo 111114995njava.com";
-        String encryptedString = AES.encrypt(originalString, secretKey) ;
-        encryptedString = "Nw2DL/pamGP7BlY6siI1tw==";
-        String decryptedString = AES.decrypt(encryptedString, secretKey) ;
-
-        System.out.println(originalString);
-        System.out.println(encryptedString);
-        System.out.println(decryptedString);
     }
 }
 

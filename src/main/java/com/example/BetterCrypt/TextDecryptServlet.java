@@ -1,10 +1,12 @@
 package com.example.BetterCrypt;
 
+import com.example.Security.Text.AESText;
+import com.example.Security.Text.NinesComplimentText;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "TextDecryptServlet", value = "/TextDecryptServlet")
 public class TextDecryptServlet extends HttpServlet {
@@ -15,6 +17,8 @@ public class TextDecryptServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        AESText AES = new AESText();
         // read form fields
         String inputText = request.getParameter("text-decrypt");
         String secretKey = request.getParameter("floatingKey");
@@ -24,10 +28,10 @@ public class TextDecryptServlet extends HttpServlet {
 
         // do some processing here...
 
-        String nineDec = ascii.decrypt(inputText);
+        String nineDec = NinesComplimentText.decrypt(inputText);
         String AESDecryptedText = AES.decrypt(nineDec,secretKey);
 
-        //assert AESDecryptedText != null;
+        assert AESDecryptedText != null;
         request.setAttribute("decrypted_text", AESDecryptedText.replaceAll(String.valueOf((char)8218),"").replace(String.valueOf((char)194),"").replace(String.valueOf((char)195),""));
         RequestDispatcher rd = request.getRequestDispatcher("/text-decrypt.jsp");
         rd.forward(request, response);

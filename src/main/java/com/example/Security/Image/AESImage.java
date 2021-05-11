@@ -1,4 +1,4 @@
-package com.example.Security.Text.Image;
+package com.example.Security.Image;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,10 +1,10 @@
 @charset "UTF-8";
-/*!
+/*/
 * Start Bootstrap - Landing Page v5.1.0 (https://startbootstrap.com/theme/landing-page)
 * Copyright 2013-2021 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
 */
-/*!
+/*/
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -71,6 +71,11 @@ body {
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
+}
+
+.navbar-brand {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 48px;
 }
 
 hr {

@@ -1,5 +1,7 @@
 package com.example.BetterCrypt;
 
+import com.example.Security.Image.AESImage;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -35,7 +37,7 @@ public class ImageEncryptServlet extends HttpServlet {
 
         //ImageEncryptAES.encrypt(filePath, secretKey);
 
-        fileName = ImageEncDec.encrypt(dir, filePath, secretKey, fileName);
+        fileName = AESImage.encrypt(dir, filePath, secretKey, fileName);
         String EncryptedfilePath = dir+fileName;
 
         PrintWriter out = response.getWriter();

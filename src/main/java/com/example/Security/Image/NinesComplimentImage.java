@@ -1,6 +1,6 @@
-package com.example.Security.Text.Image;
+package com.example.Security.Image;
 
-import com.example.Security.Text.AES;
+import com.example.Security.Text.AESText;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -248,30 +248,5 @@ public class NinesComplimentImage {
         return decryptedText.toString();
     }
 
-    public static void main(String[] args) {
-        final String secretKey = "ssshhhhhhhhhhh!!";
-        Scanner in = new Scanner(System.in);
-        String txt = in.next();
-        String aes_enc = AES.encrypt(txt,secretKey);
-        String enc = encrypt(aes_enc);
-        String nine_dec = decrypt(enc);
 
-        String Aes_dec = AES.decrypt(nine_dec, secretKey);
-
-        System.out.println("AES enc: "+aes_enc);
-        System.out.println("nine enc: "+enc);
-        System.out.println("nine denc: "+nine_dec);
-        System.out.println("AES denc: "+Aes_dec);
-
-//        Scanner in = new Scanner(System.in);
-//        String txt = in.next();
-//        txt = "MY NAME";
-//        String enc = encrypt(txt);
-//        System.out.println("ENC: "+enc);
-//        String nine_dec = decrypt(enc);
-//        System.out.println("NINE_DEC: "+nine_dec);
-
-
-
-    }
 }
