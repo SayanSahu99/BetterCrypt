@@ -42,8 +42,8 @@
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                     <div class="features-icons-icon d-flex"><i class="icon-screen-desktop m-auto text-primary"></i></div>
-                    <h3>Fully Responsive</h3>
-                    <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                    <h3>Portability</h3>
+                    <p class="lead mb-0">This website will look great on any OS, no matter the size!</p>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -142,14 +142,14 @@
             <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
                 <ul class="list-inline mb-2">
                     <li class="list-inline-item"><a href="#!">About</a></li>
-                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"></li>
                     <li class="list-inline-item"><a href="#!">Contact</a></li>
-                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"></li>
                     <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                    <li class="list-inline-item">⋅</li>
+                    <li class="list-inline-item"></li>
                     <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
                 </ul>
-                <p class="text-muted small mb-4 mb-lg-0">© Your Website 2021. All Rights Reserved.</p>
+                <p class="text-muted small mb-4 mb-lg-0">BetterCrypt© 2021. All Rights Reserved.</p>
             </div>
             <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
                 <ul class="list-inline mb-0">
