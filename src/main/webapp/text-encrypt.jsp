@@ -8,6 +8,7 @@
 <html>
 <head>
     <title>Text encryption</title>
+    <link rel="icon" type="image/x-icon" href="assets/BetterCryptLogo.ico" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -44,7 +45,7 @@
 </div>
 <div class="card mx-5 my-5" >
     <div class="card-body">
-        <h5 class="card-title">Generated Key</h5>
+        <h5 class="card-title">Generate Random Key</h5>
         <form >
             <input class="form-control" placeholder="Sample Key" id="floatingTextarea2" disabled readonly>
             <button type="button" class="btn btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
