@@ -16,18 +16,17 @@ public class NinesComplimentText {
         Map<Character, Integer> t = new HashMap<>();
         Map<Integer, Character> t1 = new HashMap<>();
 
-        char c; int m = 0;
-        for(c = 0; c <= 127; ++c) {
-            t.put(c, m);
-            m++;
+        int c=text.length();
+        int m;
+        for( m= 0; m <c; ++m) {
+            t.put(text.charAt(m), (int)text.charAt(m));
         }
 
         t.put((char) 170, 170);
 
         m = 0;
-        for(c = 0; c <= 127; ++c) {
-            t1.put(m, c);
-            m++;
+        for(m = 0; m <c ; ++m) {
+            t1.put((int)text.charAt(m), text.charAt(m));
         }
 
         t1.put(170, (char) 170);
@@ -50,7 +49,7 @@ public class NinesComplimentText {
 
         for(Character n: nine) {
             int dec=Integer.parseInt(n.toString());
-            String result= "00000000";
+            String result= "0000000000000000";
             int i=result.length()-1;
             while(dec!=0) {
                 char[] a =result.toCharArray();

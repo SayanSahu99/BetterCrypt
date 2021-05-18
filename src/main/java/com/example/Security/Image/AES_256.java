@@ -1,4 +1,5 @@
 package com.example.Security.Image;
+
 import javax.swing.*;
 import java.security.SecureRandom;
 import javax.crypto.Cipher;
@@ -7,19 +8,25 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Random;
 
-class AES {
+public class AES_256 {
     byte[] skey = new byte[1000];
     String skeyString;
     static byte[] raw;
-    String inputMessage, encryptedData, decryptedMessage;
+    String inputMessage;
 
-    public AES() {
+    public AES_256() {
         try {
             generateSymmetricKey();
+
             inputMessage = JOptionPane.showInputDialog(null, "Enter message to encrypt");
             byte[] ibyte = inputMessage.getBytes();
             byte[] ebyte = encrypt(raw, ibyte);
             String encryptedData = new String(ebyte);
+            int l = encryptedData.length();
+            for(int i=0; i<l; i++)
+            {
+                System.out.println((int)encryptedData.charAt(i));
+            }
             System.out.println("Encrypted message " + encryptedData);
             JOptionPane.showMessageDialog(null, "Encrypted Data " + "\n" + encryptedData);
 
@@ -38,7 +45,7 @@ class AES {
         try {
             Random r = new Random();
             int num = r.nextInt(10000);
-            String knum = "";
+            String knum = String.valueOf(num);
             byte[] knumb = knum.getBytes();
             skey = getRawKey(knumb);
             skeyString = new String(skey);
@@ -52,13 +59,13 @@ class AES {
         KeyGenerator kgen = KeyGenerator.getInstance("AES");
         SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
         sr.setSeed(seed);
-        kgen.init(256, sr); // 192 and 256 bits may not be available
+        kgen.init(128, sr); // 192 and 256 bits may not be available
         SecretKey skey = kgen.generateKey();
         raw = skey.getEncoded();
         return raw;
     }
 
-    private static byte[] encrypt(byte[] raw, byte[] clear) throws Exception {
+    public static byte[] encrypt(byte[] raw, byte[] clear) throws Exception {
         SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
@@ -66,7 +73,7 @@ class AES {
         return encrypted;
     }
 
-    private static byte[] decrypt(byte[] raw, byte[] encrypted) throws Exception {
+    public static byte[] decrypt(byte[] raw, byte[] encrypted) throws Exception {
         SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.DECRYPT_MODE, skeySpec);
@@ -74,8 +81,7 @@ class AES {
         return decrypted;
     }
 
-
     public static void main(String args[]) {
-        AES aes = new AES();
+        AES_256 aes = new AES_256();
     }
 }
