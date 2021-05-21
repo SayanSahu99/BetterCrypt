@@ -104,25 +104,7 @@ public class NinesComplimentImage {
             dec += 32;
             encryptedText.append(t1.get(dec));
         }
-
         encryptedText.append((char)170).append(comp_length);
-//
-//        System.out.println(nine);
-//        System.out.println(six);
-//        System.out.println(xor);
-//        System.out.println(one);
-//        System.out.println(encryptedText.toString());
-//        System.out.println(value);
-//        System.out.println("comp_len "+ comp_length);
-
-//        return encryptedText.toString();
-
-//        System.out.println("Nine: "+nine);
-//        System.out.println("Six: "+six);
-//        System.out.println("Xor: "+xor);
-//        System.out.println("One: "+one);
-//        System.out.println("Encrypt: "+encryptedText);
-
         return encryptedText.toString();
 
 

@@ -5,61 +5,56 @@ import com.example.Security.TextAlgorithm;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
 import java.util.Arrays;
 import java.util.Base64;
 
 import javax.crypto.Cipher;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class AESText implements TextAlgorithm {
+public class AESText {
 
-    private static SecretKeySpec secretKey;
+    private static SecretKeySpec Key;
 
-    public void setKey(String myKey)
-    {
-        MessageDigest sha = null;
-        try {
-            byte[] key = myKey.getBytes(StandardCharsets.UTF_8);
-            sha = MessageDigest.getInstance("SHA-1");
-            key = sha.digest(key);
-            key = Arrays.copyOf(key, 16);
-            secretKey = new SecretKeySpec(key, "AES");
-        }
-        catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
+    public static void getAESKeyFromPassword(String password, int KeyLength)
+            throws NoSuchAlgorithmException, InvalidKeySpecException {
+
+        char[] key = password.toCharArray();
+
+        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+        KeySpec spec = new PBEKeySpec(key, password.getBytes(), 65536, KeyLength);
+        Key =  new SecretKeySpec(factory.generateSecret(spec).getEncoded(), "AES");
     }
 
-    public String encrypt(String strToEncrypt, String secret)
+    public static byte[] encrypt (byte[] plaintext, String key, int keyLength) throws Exception
     {
-        try
-        {
-            setKey(secret);
-            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
-            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-            return Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes(StandardCharsets.UTF_8)));
-        }
-        catch (Exception e)
-        {
-            System.out.println("Error while encrypting: " + e.toString());
-        }
-        return null;
+        getAESKeyFromPassword(key, keyLength);
+        //Get Cipher Instance
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        //Create SecretKeySpec
+        SecretKeySpec keySpec = new SecretKeySpec(Key.getEncoded(), "AES");
+        //Initialize Cipher for ENCRYPT_MODE
+        cipher.init(Cipher.ENCRYPT_MODE, keySpec);
+        //Perform Encryption
+        return cipher.doFinal(plaintext);
     }
 
-    public String decrypt(String strToDecrypt, String secret)
+
+    public static String decrypt (String cipherText, String key, int keyLength) throws Exception
     {
-        try
-        {
-            setKey(secret);
-            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
-            cipher.init(Cipher.DECRYPT_MODE, secretKey);
-            return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
-        }
-        catch (Exception e)
-        {
-            System.out.println("Error while decrypting: " + e.toString());
-        }
-        return null;
+        getAESKeyFromPassword(key, keyLength);
+        //Get Cipher Instance
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        //Create SecretKeySpec
+        SecretKeySpec keySpec = new SecretKeySpec(Key.getEncoded(), "AES");
+        //Initialize Cipher for DECRYPT_MODE
+        cipher.init(Cipher.DECRYPT_MODE, keySpec);
+        //Perform Decryption
+        byte[] decryptedText = cipher.doFinal(Base64.getDecoder().decode(cipherText));
+        return new String(decryptedText);
     }
 }
 

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Sharath
   Date: 26-04-2021
@@ -12,6 +12,15 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+<%
+    Object error = request.getAttribute("error");
+    if(error != null) {
+        out.println("<div class=\"alert alert-danger\" role=\"alert\">");
+        out.println(error);
+        out.println("</div>");
+    }
+    error = null;
+%>
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Text Decryption</h5>
@@ -20,15 +29,16 @@
                 <textarea name="text-decrypt" class="form-control" placeholder="Enter Encrypted Text here" id="floatingTextarea" style="height: 100px"></textarea>
                 <label for="floatingTextarea">Input Text</label>
             </div>
+            <div class="input-group mb-3">
+                <select name="bits" class="form-select" aria-label="Default select example">
+                    <option value="128">128 Bits</option>
+                    <option value="192">192 Bits</option>
+                    <option value="256">256 Bits</option>
+                </select>
+            </div>
             <div class="form-floating mb-3">
                 <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
-            </div>
-            <div class="input-group mb-3">
-                <select class="form-select" aria-label="Default select example">
-                    <option value="128">128 Bit</option>
-                    <option value="256">256 Bit</option>
-                </select>
             </div>
             <button type="submit" class="btn btn-primary mt-4" >Submit</button>
         </form>
@@ -119,6 +129,7 @@
         }
     }
 </script>
+<%@include file="footer.jsp" %>
 </body>
 </html>
 

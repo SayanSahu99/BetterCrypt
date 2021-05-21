@@ -18,6 +18,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        body {
+            padding-top: 50px !important;
+        }
+    </style>
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -94,26 +100,26 @@
 <!-- Testimonials-->
 <section class="testimonials text-center bg-light">
     <div class="container">
-        <h2 class="mb-5">What people are saying...</h2>
+        <h2 class="mb-5">OUR AMAZING TEAM</h2>
         <div class="row">
             <div class="col-lg-4">
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                    <h5>Margaret E.</h5>
+                    <img class="img-fluid rounded-circle mb-3" src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortRound&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=PastelGreen&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Brown" alt="..." />
+                    <h5>Sharath Pai</h5>
                     <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                    <h5>Fred S.</h5>
-                    <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+                    <img class="img-fluid rounded-circle mb-3" src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Sunglasses&hairColor=Black&facialHairType=Blank&clotheType=ShirtCrewNeck&clotheColor=Black&eyeType=Surprised&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Brown" alt="..." />
+                    <h5>Shubhankar Haldia</h5>
+                    <p class="font-weight-light mb-0">"BetterCrypt is amazing. I've created it to secure your data."</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                    <h5>Sarah W.</h5>
+                    <img class="img-fluid rounded-circle mb-3" src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Wayfarers&hairColor=Black&facialHairType=Blank&facialHairColor=Red&clotheType=BlazerSweater&eyeType=Side&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Tanned" alt="..." />
+                    <h5>Sayan Sahu</h5>
                     <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
                 </div>
             </div>
@@ -138,37 +144,7 @@
 <%--    </div>--%>
 </section>
 <!-- Footer-->
-<footer class="footer bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-                <ul class="list-inline mb-2">
-                    <li class="list-inline-item"><a href="assets/SRS%20Document%20on%20Data%20Encryption%20System%20(AES%20with%20Complement).pdf">About</a></li>
-                    <li class="list-inline-item"></li>
-                    <li class="list-inline-item"><a href="#!">Contact</a></li>
-                    <li class="list-inline-item"></li>
-                    <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                    <li class="list-inline-item"></li>
-                    <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                </ul>
-                <p class="text-muted small mb-4 mb-lg-0">BetterCrypt© 2021. All Rights Reserved.</p>
-            </div>
-            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item mr-3">
-                        <a href="https://www.facebook.com/shubhankar.haldia.1"><i class="fab fa-facebook fa-2x fa-fw"></i></a>
-                    </li>
-                    <li class="list-inline-item mr-3">
-                        <a href="https://twitter.com/Shubhan71506563"><i class="fab fa-twitter-square fa-2x fa-fw"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/shubhankarhaldia/"><i class="fab fa-instagram fa-2x fa-fw"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+<%@include file="footer.jsp" %>
 <!-- Bootstrap core JS-->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>

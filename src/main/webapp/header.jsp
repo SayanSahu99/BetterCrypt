@@ -14,16 +14,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Ruthie&display=swap" rel="stylesheet">
     <style>
         .navbar-brand {font-family: 'Ruthie', cursive !important;
-        font-size: 50px}
+        font-size: 40px !important;}
+
+        body {
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light static-top">
+<nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <span>
-        <img src="${pageContext.request.contextPath}/assets/img/BetterCryptLogo.png" width="70px"; height="70px">
-        <a class="navbar-brand" href="index.jsp">BetterCrypt</a>
-            </span>
+        <div class="d-flex align-items-center p-0 my-0 text-white">
+            <div class="lh-1">
+                <a class="navbar-brand h6 mb-0 lh-1" href="index.jsp">BetterCrypt</a>
+            </div>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

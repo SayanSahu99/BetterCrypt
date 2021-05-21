@@ -25,19 +25,36 @@ public class ImageEncryptServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String dir="", fileName = "", filePath="";
+
         // read form fields
         String secretKey = request.getParameter("floatingKey");
+        String bits = request.getParameter("bits");
 
-        String dir = getServletContext().getRealPath("/");
-        Part part = request.getPart("file");
-        String fileName = part.getSubmittedFileName();
+        try{
+            dir = getServletContext().getRealPath("/");
+            Part part = request.getPart("file");
+            fileName = part.getSubmittedFileName();
 
-        String filePath = dir+fileName;
-        part.write(filePath);
+            filePath = dir+fileName;
+            part.write(filePath);
+        } catch (Exception e){
+            e.printStackTrace();
+            RequestDispatcher rd = request.getRequestDispatcher("/image-encrypt.jsp");
+            request.setAttribute("error", "Please upload an image");
+            rd.forward(request, response);
+        }
 
-        //ImageEncryptAES.encrypt(filePath, secretKey);
+        try {
+            fileName = AESImage.encrypt(dir, filePath, secretKey, Integer.parseInt(bits) ,fileName);
+        }catch (Exception e){
+            e.printStackTrace();
+            RequestDispatcher rd = request.getRequestDispatcher("/image-encrypt.jsp");
+            request.setAttribute("error", e.getMessage());
+            rd.forward(request, response);
+        }
 
-        fileName = AESImage.encrypt(dir, filePath, secretKey, fileName);
         String EncryptedfilePath = dir+fileName;
 
         PrintWriter out = response.getWriter();

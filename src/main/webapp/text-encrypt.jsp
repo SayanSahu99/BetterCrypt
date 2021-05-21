@@ -20,15 +20,16 @@
                 <textarea name="text-encrypt" class="form-control" placeholder="Enter Input Text here" id="floatingTextarea" style="height: 200px"></textarea>
                 <label for="floatingTextarea">Input Text</label>
             </div>
+            <div class="input-group mb-3">
+                <select name="bits" class="form-select" aria-label="Default select example">
+                    <option value="128">128 Bits</option>
+                    <option value="192">192 Bits</option>
+                    <option value="256">256 Bits</option>
+                </select>
+            </div>
             <div class="form-floating mb-3">
                 <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
-            </div>
-            <div class="input-group mb-3">
-                <select name="bits" class="form-select" aria-label="Default select example">
-                    <option value="128">128 Bit</option>
-                    <option value="256">256 Bit</option>
-                </select>
             </div>
             <button type="submit" class="btn btn-primary mt-4" >Submit</button>
         </form>
@@ -147,5 +148,6 @@
         keyField1.value=uuid;
     }
 </script>
+<%@include file="footer.jsp" %>
 </body>
 </html>
