@@ -7,7 +7,7 @@
     <meta name="author" content="" />
     <title>BetterCrypt</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/BetterCryptLogo.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/BetterCryptLogo1.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Simple line icons-->
@@ -143,7 +143,7 @@
         <div class="row">
             <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
                 <ul class="list-inline mb-2">
-                    <li class="list-inline-item"><a href="#!">About</a></li>
+                    <li class="list-inline-item"><a href="assets/SRS%20Document%20on%20Data%20Encryption%20System%20(AES%20with%20Complement).pdf">About</a></li>
                     <li class="list-inline-item"></li>
                     <li class="list-inline-item"><a href="#!">Contact</a></li>
                     <li class="list-inline-item"></li>
