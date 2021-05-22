@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Lenovo
+  Date: 26-04-2021
+  Time: 14:15
+  To change this template use File | Settings | File Templates.
+--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,14 +39,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-<%--            <div class="col-xl-9 mx-auto"><h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1></div>--%>
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-<%--                <form>--%>
-<%--                    <div class="form-row">--%>
-<%--                        <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..." /></div>--%>
-<%--                        <div class="col-12 col-md-3"><button class="btn btn-block btn-lg btn-primary" type="submit">Sign up!</button></div>--%>
-<%--                    </div>--%>
-<%--                </form>--%>
             </div>
         </div>
     </div>
@@ -129,20 +129,6 @@
 </section>
 <!-- Call to Action-->
 <section class="call-to-action text-white text-center">
-<%--    <div class="overlay"></div>--%>
-<%--    <div class="container">--%>
-<%--        <div class="row">--%>
-<%--            <div class="col-xl-9 mx-auto"><h2 class="mb-4">Ready to get started? Sign up now!</h2></div>--%>
-<%--            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">--%>
-<%--                <form>--%>
-<%--                    <div class="form-row">--%>
-<%--                        <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..." /></div>--%>
-<%--                        <div class="col-12 col-md-3"><button class="btn btn-block btn-lg btn-primary" type="submit">Sign up!</button></div>--%>
-<%--                    </div>--%>
-<%--                </form>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
 </section>
 <!-- Footer-->
 <%@include file="footer.jsp" %>

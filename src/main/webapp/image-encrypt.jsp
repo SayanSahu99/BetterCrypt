@@ -54,54 +54,54 @@
 <div class="modal fade" id="emailModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header text-white bg-dark">
                 <h5 class="modal-title" id="staticBackdropLabel">Enter Email</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-lg" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="sendEmailForm">
                     <div class="mb-3">
                         <label for="emailText" class="form-label">Email address</label>
-                        <input id="emailText" name="email" type="email" class="form-control" aria-describedby="emailHelp">
+                        <input id="emailText" name="email" type="email" class="form-control border-dark" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
-                    <button type="button" onclick="return callServlet();" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="return callServlet();" class="btn btn-lg btn-primary">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Image Encryption</h5>
     <div class="card-body">
-        <h5 class="card-title">Image Encryption</h5>
         <form id="imageEncryptForm" name="image-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()" enctype="multipart/form-data" action="${pageContext.request.contextPath}/ImageEncryptServlet" novalidate>
             <div class="input-group mb-3">
-                <input name="file" type="file" class="form-control" id="inputGroupFile02" accept="image/*" onchange="loadFile(event)" required>
+                <input name="file" type="file" class="form-control border-dark" id="inputGroupFile02" accept="image/*" onchange="loadFile(event)" required>
             </div>
-            <img id="image" width="200" class="rounded mx-auto mb-3 d-block" alt="">
+            <img id="image" width="200" class="rounded mx-auto mb-3 d-block border-dark shadow-sm" alt="">
             <div class="input-group mb-3">
-                <select name="bits" class="form-select" aria-label="Default select example">
+                <select name="bits" class="form-select border-dark" aria-label="Default select example">
                     <option value="128">128 Bits</option>
                     <option value="192">192 Bits</option>
                     <option value="256">256 Bits</option>
                 </select>
             </div>
             <div class="form-floating mb-3">
-                <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
+                <input name="floatingKey" type="password" class="form-control border-dark" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
             </div>
-            <button type="submit" class="btn btn-primary mt-4 mr-3" >Download</button>
-            <button id="SendButton" type="button" class="btn btn-primary mt-4" onclick="return showModal();" data-bs-target="#emailModal">Send</button>
+            <button type="submit" class="btn btn-primary btn-lg mt-4 mr-3" >Download</button>
+            <button id="SendButton" type="button" class="btn btn-lg btn-primary mt-4" onclick="return showModal();" data-bs-target="#emailModal">Send Mail</button>
         </form>
     </div>
 </div>
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Generate Random Key</h5>
     <div class="card-body">
-        <h5 class="card-title">Generate Random Key</h5>
         <form >
-            <input class="form-control" placeholder="Output Text" id="floatingTextarea2" disabled readonly >
-            <button type="button" class="btn btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
+            <input class="form-control border-dark" placeholder="Output Text" id="floatingTextarea2" disabled readonly >
+            <button type="button" class="btn btn-lg btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
         </form>
     </div>
 </div>

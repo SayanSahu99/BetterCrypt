@@ -2,14 +2,11 @@ package com.example.BetterCrypt;
 
 import com.example.Email.EmailUtil;
 import com.example.Security.Image.AESImage;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Arrays;
 
 @WebServlet(name = "EmailServlet", value = "/EmailServlet")
 @MultipartConfig(
@@ -25,6 +22,8 @@ public class EmailServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        AESImage AESImage = new AESImage();
 
         String dir="", fileName = "", filePath="", email="";
 
@@ -74,23 +73,11 @@ public class EmailServlet extends HttpServlet {
         if( cookies != null ) {
             for (Cookie value : cookies) {
                 cookie = value;
-                System.out.println("Name : " + cookie.getName() + ",  ");
-                System.out.println("Value: " + cookie.getValue());
                 if((cookie.getName( )).compareTo("email") == 0 ) {
                     email = cookie.getValue();
                     cookie.setMaxAge(0);
                     response.addCookie(cookie);
-                    System.out.println("Deleted cookie: " +
-                            cookie.getName( ));
                 }
-            }
-
-            System.out.println();
-
-            for (Cookie value : cookies) {
-                cookie = value;
-                System.out.println("Name : " + cookie.getName() + ",  ");
-                System.out.println("Value: " + cookie.getValue());
             }
 
         } else {
@@ -114,7 +101,5 @@ public class EmailServlet extends HttpServlet {
         request.setAttribute("success","Email Sent");
         RequestDispatcher rd = request.getRequestDispatcher("/image-encrypt.jsp");
         rd.forward(request, response);
-
-
     }
 }

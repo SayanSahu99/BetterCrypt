@@ -22,6 +22,8 @@ public class ImageDecryptServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        AESImage AESImage = new AESImage();
+
         String dir="", fileName = "", filePath="", error ="";
 
         // read form fields
@@ -83,7 +85,6 @@ public class ImageDecryptServlet extends HttpServlet {
             rd.forward(request, response);
         }
 
-        request.setAttribute("success", "Image Decrypted");
         RequestDispatcher rd = request.getRequestDispatcher("/image-decrypt.jsp");
         request.setAttribute("error", null);
         rd.forward(request, response);

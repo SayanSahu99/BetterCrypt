@@ -18,7 +18,7 @@ public class TextDecryptServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        AESText AES = new AESText();
+        AESText AESText = new AESText();
 
         // read form fields
         String inputText = request.getParameter("text-decrypt");
@@ -41,9 +41,6 @@ public class TextDecryptServlet extends HttpServlet {
             rd.forward(request, response);
         }
 
-
-        //String AESDecryptedText = AES.decrypt(nineDec,secretKey);
-
         String AESDecryptedText = null;
         try {
             AESDecryptedText = AESText.decrypt(nineDec, secretKey, Integer.parseInt(bits));
@@ -54,7 +51,6 @@ public class TextDecryptServlet extends HttpServlet {
             rd.forward(request, response);
         }
 
-        System.out.println("Bits: "+bits);
 
         assert AESDecryptedText != null;
         request.setAttribute("success", "Text Decrypted");

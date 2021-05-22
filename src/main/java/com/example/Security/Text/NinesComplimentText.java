@@ -1,7 +1,5 @@
 package com.example.Security.Text;
 
-import com.example.Security.TextAlgorithm;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,13 +34,11 @@ public class NinesComplimentText {
         ArrayList<Character> nine = new ArrayList<>();
         for(int j = 0; j < text.length(); j++) {
             number = t.get(text.charAt(j)).toString();
-            //System.out.println("NUMBER: "+number);
             char[] n=number.toCharArray();
             for (int i=0 ; i < n.length ; i++ ){
                 n[i] = (char)((int)('9') - (int)(n[i]) + (int)('0'));
                 nine.add(n[i]);
             }
-            //System.out.println(n);
             comp_length.append(n.length);
         }
 
@@ -186,9 +182,6 @@ public class NinesComplimentText {
         for(String s: mod_nine) {
             decryptedText.append(t1.get(Integer.parseInt(s)));
         }
-
         return decryptedText.toString();
     }
-
-
 }

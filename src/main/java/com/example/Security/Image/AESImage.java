@@ -1,6 +1,10 @@
 package com.example.Security.Image;
 
-import java.io.File;
+import com.example.Helpers.File;
+import com.example.Helpers.KeyGenerator;
+import com.example.Helpers.Receiver;
+import com.example.Helpers.Sender;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,53 +15,12 @@ import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.security.spec.KeySpec;
-import java.util.Arrays;
-
 import javax.crypto.Cipher;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class AESImage {
 
-    private static SecretKeySpec secretKey;
 
-    public static byte[] getFile(String filepath) {
-
-        File f = new File(filepath);
-        InputStream is = null;
-        try {
-            is = new FileInputStream(f);
-        } catch (FileNotFoundException e2) {
-            e2.printStackTrace();
-        }
-        byte[] content = null;
-        try {
-            assert is != null;
-            content = new byte[is.available()];
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        try {
-            assert content != null;
-            is.read(content);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return content;
-    }
-
-    public static void getAESKeyFromPassword(String password, int keyLength)
-            throws NoSuchAlgorithmException, InvalidKeySpecException {
-
-        char[] key = password.toCharArray();
-
-        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-        KeySpec spec = new PBEKeySpec(key, password.getBytes(), 65536, keyLength);
-        secretKey =  new SecretKeySpec(factory.generateSecret(spec).getEncoded(), "AES");
-    }
+public class AESImage implements Sender, Receiver, KeyGenerator {
 
     public static byte[] encryptPdfFile(Key key, byte[] content) {
         Cipher cipher;
@@ -87,23 +50,16 @@ public class AESImage {
         return decrypted;
     }
 
-    public static void saveFile(byte[] bytes, String dir ,String fileName) throws IOException {
 
-        FileOutputStream fos = new FileOutputStream(dir+fileName);
-        fos.write(bytes);
-        fos.close();
-
-    }
-
-    public static String encrypt(String dir, String filepath, String myKey, int keyLength, String filename) {
+    public String encrypt(String dir, String filepath, String myKey, int keyLength, String filename) {
 
         try {
-            getAESKeyFromPassword(myKey, keyLength);
-            byte[] content = getFile(filepath);
+            SecretKeySpec secretKey = KeyGenerator.getAESKeyFromPassword(myKey, keyLength);
+            byte[] content = File.getFile(filepath);
             byte[] encrypted = encryptPdfFile(secretKey, content);
             String s = new String(encrypted, StandardCharsets.ISO_8859_1);
             String ascii_enc = NinesComplimentImage.encrypt(s);
-            saveFile(ascii_enc.getBytes(StandardCharsets.ISO_8859_1), dir,"encrypted_"+filename);
+            File.saveFile(ascii_enc.getBytes(StandardCharsets.ISO_8859_1), dir,"encrypted_"+filename);
             return "encrypted_"+filename;
         }
         catch (NoSuchAlgorithmException | IOException | InvalidKeySpecException e) {
@@ -112,16 +68,16 @@ public class AESImage {
         return "encrypted_"+filename;
     }
 
-    public static String decrypt(String dir, String filepath, String myKey, int keyLength, String filename) {
+    public String decrypt(String dir, String filepath, String myKey, int keyLength, String filename) {
 
         MessageDigest sha = null;
         try {
-            getAESKeyFromPassword(myKey, keyLength);
-            byte[] encrypted = getFile(filepath);
+            SecretKeySpec secretKey = KeyGenerator.getAESKeyFromPassword(myKey, keyLength);
+            byte[] encrypted = File.getFile(filepath);
             String ascii_enc = new String(encrypted, StandardCharsets.ISO_8859_1);
             String ascii_dec = NinesComplimentImage.decrypt(ascii_enc);
             byte[] decrypted = decryptPdfFile(secretKey, ascii_dec.getBytes(StandardCharsets.ISO_8859_1));
-            saveFile(decrypted, dir,"decrypted_"+filename);
+            File.saveFile(decrypted, dir,"decrypted_"+filename);
             System.out.println("Done");
             return "decrypted_"+filename;
         }
@@ -129,6 +85,14 @@ public class AESImage {
             e.printStackTrace();
         }
         return "decrypted_"+filename;
+    }
+
+    public byte[] encrypt(byte[] plaintext, String key, int keyLength) throws Exception {
+        return null;
+    }
+
+    public String decrypt(String cipherText, String key, int keyLength) throws Exception {
+        return null;
     }
 
 }

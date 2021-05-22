@@ -48,32 +48,32 @@
                 "</html>");
     }
 %>
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Text Decryption</h5>
     <div class="card-body">
-        <h5 class="card-title">Text Decryption</h5>
         <form name="text-decrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()"  action="${pageContext.request.contextPath}/TextDecryptServlet" novalidate>
             <div class="form-floating mb-3" >
-                <textarea name="text-decrypt" class="form-control" placeholder="Enter Encrypted Text here" id="floatingTextarea" style="height: 100px"></textarea>
+                <textarea name="text-decrypt" class="form-control border-dark" placeholder="Enter Encrypted Text here" id="floatingTextarea" style="height: 100px"></textarea>
                 <label for="floatingTextarea">Input Text</label>
             </div>
             <div class="input-group mb-3">
-                <select name="bits" class="form-select" aria-label="Default select example">
+                <select name="bits" class="form-select border-dark" aria-label="Default select example">
                     <option value="128">128 Bits</option>
                     <option value="192">192 Bits</option>
                     <option value="256">256 Bits</option>
                 </select>
             </div>
             <div class="form-floating mb-3">
-                <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
+                <input name="floatingKey" type="password" class="form-control border-dark" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
             </div>
-            <button type="submit" class="btn btn-primary mt-4" >Submit</button>
+            <button type="submit" class="btn btn-lg btn-primary mt-4" >Submit</button>
         </form>
     </div>
 </div>
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Original Text</h5>
     <div class="card-body">
-        <h5 class="card-title">Original Text</h5>
         <%
             Object attributeValue = request.getAttribute("decrypted_text");
             if(attributeValue == null) {
@@ -82,7 +82,7 @@
 
         %>
         <form method="get">
-            <textarea class="form-control" placeholder="Original Text" id="floatingTextarea1" disabled readonly style="height: 100px"><%= attributeValue%></textarea>
+            <textarea class="form-control border-dark" placeholder="Original Text" id="floatingTextarea1" disabled readonly style="height: 100px"><%= attributeValue%></textarea>
         </form>
     </div>
 </div>

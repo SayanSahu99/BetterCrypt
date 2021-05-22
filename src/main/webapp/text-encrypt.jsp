@@ -30,32 +30,32 @@
                 "</html>");
     }
 %>
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Text Encryption</h5>
     <div class="card-body">
-        <h5 class="card-title">Text Encryption</h5>
         <form name="text-encrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()"  action="${pageContext.request.contextPath}/TextEncryptServlet" novalidate>
             <div class="form-floating mb-3" >
-                <textarea name="text-encrypt" class="form-control" placeholder="Enter Input Text here" id="floatingTextarea" style="height: 200px"></textarea>
+                <textarea name="text-encrypt" class="form-control border-dark" placeholder="Enter Input Text here" id="floatingTextarea" style="height: 200px"></textarea>
                 <label for="floatingTextarea">Input Text</label>
             </div>
             <div class="input-group mb-3">
-                <select name="bits" class="form-select" aria-label="Default select example">
+                <select name="bits" class="form-select border-dark" aria-label="Default select example">
                     <option value="128">128 Bits</option>
                     <option value="192">192 Bits</option>
                     <option value="256">256 Bits</option>
                 </select>
             </div>
             <div class="form-floating mb-3">
-                <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
+                <input name="floatingKey" type="password" class="form-control border-dark" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
             </div>
-            <button type="submit" class="btn btn-primary mt-4" >Submit</button>
+            <button type="submit" class="btn btn-lg btn-primary mt-4" >Submit</button>
         </form>
     </div>
 </div>
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Encrypted Text</h5>
     <div class="card-body">
-        <h5 class="card-title">Encrypted Text</h5>
         <%
             Object attributeValue = request.getAttribute("encrypted_text");
             if(attributeValue == null) {
@@ -64,16 +64,16 @@
 
         %>
         <form method="get">
-            <textarea class="form-control" placeholder="Output Text" id="floatingTextarea1" disabled readonly style="height: 200px"><%= attributeValue%></textarea>
+            <textarea class="form-control border-dark" placeholder="Output Text" id="floatingTextarea1" disabled readonly style="height: 200px"><%= attributeValue%></textarea>
         </form>
     </div>
 </div>
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Generate Random Key</h5>
     <div class="card-body">
-        <h5 class="card-title">Generate Random Key</h5>
         <form >
-            <input class="form-control" placeholder="Sample Key" id="floatingTextarea2" disabled readonly>
-            <button type="button" class="btn btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
+            <input class="form-control border-dark" placeholder="Sample Key" id="floatingTextarea2" disabled readonly>
+            <button type="button" class="btn btn-lg btn-primary mt-4" onclick="generateUUID()" >Generate Key</button>
         </form>
     </div>
 </div>

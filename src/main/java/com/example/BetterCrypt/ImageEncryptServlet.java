@@ -26,6 +26,8 @@ public class ImageEncryptServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        AESImage AESImage = new AESImage();
+
         String dir="", fileName = "", filePath="";
 
         // read form fields

@@ -20,6 +20,8 @@ public class TextEncryptServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        AESText AESText = new AESText();
+
         NinesComplimentText NinesComplimentText = new NinesComplimentText();
         // read form fields
         String inputText = request.getParameter("text-encrypt");
@@ -36,10 +38,7 @@ public class TextEncryptServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-
-        System.out.println(AESEncryptedText);
         String ASCII_ENC = NinesComplimentText.encrypt(AESEncryptedText);
-        System.out.println(ASCII_ENC);
         request.setAttribute("success", "Text Encrypted");
         request.setAttribute("encrypted_text", ASCII_ENC);
         RequestDispatcher rd = request.getRequestDispatcher("/text-encrypt.jsp");

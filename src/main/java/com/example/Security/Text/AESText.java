@@ -1,13 +1,12 @@
 package com.example.Security.Text;
 
-import com.example.Security.TextAlgorithm;
+import com.example.Helpers.KeyGenerator;
+import com.example.Helpers.Receiver;
+import com.example.Helpers.Sender;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-import java.util.Arrays;
 import java.util.Base64;
 
 import javax.crypto.Cipher;
@@ -15,7 +14,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class AESText {
+public class AESText implements Sender, Receiver, KeyGenerator {
 
     private static SecretKeySpec Key;
 
@@ -29,7 +28,7 @@ public class AESText {
         Key =  new SecretKeySpec(factory.generateSecret(spec).getEncoded(), "AES");
     }
 
-    public static byte[] encrypt (byte[] plaintext, String key, int keyLength) throws Exception
+    public byte[] encrypt (byte[] plaintext, String key, int keyLength) throws Exception
     {
         getAESKeyFromPassword(key, keyLength);
         //Get Cipher Instance
@@ -43,7 +42,7 @@ public class AESText {
     }
 
 
-    public static String decrypt (String cipherText, String key, int keyLength) throws Exception
+    public String decrypt (String cipherText, String key, int keyLength) throws Exception
     {
         getAESKeyFromPassword(key, keyLength);
         //Get Cipher Instance
@@ -55,6 +54,14 @@ public class AESText {
         //Perform Decryption
         byte[] decryptedText = cipher.doFinal(Base64.getDecoder().decode(cipherText));
         return new String(decryptedText);
+    }
+
+    public String decrypt(String dir, String filepath, String myKey, int keyLength, String filename) {
+        return null;
+    }
+
+    public String encrypt(String dir, String filepath, String myKey, int keyLength, String filename) {
+        return null;
     }
 }
 

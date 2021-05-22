@@ -48,16 +48,16 @@
                 "</html>");
     }
 %>
-<div class="card mx-5 my-5" >
+<div class="card border-dark shadow-lg mx-5 my-5" >
+    <h5 class="card-header text-white bg-dark">Image Decryption</h5>
     <div class="card-body">
-        <h5 class="card-title">Image Decryption</h5>
         <form name="image-decrypt-form" method="post" class="needs-validation" onsubmit="return validateForm()" enctype="multipart/form-data" action="${pageContext.request.contextPath}/ImageDecryptServlet" novalidate>
             <div class="input-group mb-3">
-                <input name="file" type="file" class="form-control" id="inputGroupFile02" accept="image/*" onchange="loadFile(event)" required>
+                <input name="file" type="file" class="form-control border-dark " id="inputGroupFile02" accept="image/*" onchange="loadFile(event)" required>
             </div>
-            <img id="image" width="200" class="rounded mx-auto mb-3 d-block" alt="">
+            <img id="image" width="200" class="rounded mx-auto mb-3 d-block border-dark shadow-sm" alt="">
             <div class="input-group mb-3">
-                <select name="bits" class="form-select" aria-label="Default select example">
+                <select name="bits" class="form-select border-dark" aria-label="Default select example">
                     <option value="128">128 Bits</option>
                     <option value="192">192 Bits</option>
                     <option value="256">256 Bits</option>
@@ -67,7 +67,7 @@
                 <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
             </div>
-            <button type="submit" class="btn btn-primary mt-4" >Submit</button>
+            <button type="submit" class="btn btn-lg btn-primary mt-4" >Submit</button>
         </form>
     </div>
 </div>
