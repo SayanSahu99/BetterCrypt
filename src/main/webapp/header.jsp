@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ruthie&display=swap" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <style>
         .navbar-brand {font-family: 'Ruthie', cursive !important;
         font-size: 40px !important;}
@@ -20,6 +21,19 @@
             padding-top: 50px !important;
             padding-bottom: 50px !important;
         }
+
+        #toast-container > .toast-success {
+            background-image: none;
+            background-color: #2E7D32;
+            color: white;
+        }
+
+        #toast-container > .toast-error {
+            background-image: none;
+            background-color: #D50000;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -59,6 +73,8 @@
         </div>
     </div>
 </nav>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -57,6 +57,7 @@ public class TextDecryptServlet extends HttpServlet {
         System.out.println("Bits: "+bits);
 
         assert AESDecryptedText != null;
+        request.setAttribute("success", "Text Decrypted");
         request.setAttribute("decrypted_text", AESDecryptedText.replaceAll(String.valueOf((char)8218),"").replace(String.valueOf((char)194),"").replace(String.valueOf((char)195),""));
         RequestDispatcher rd = request.getRequestDispatcher("/text-decrypt.jsp");
         rd.forward(request, response);

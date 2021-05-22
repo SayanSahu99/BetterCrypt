@@ -14,6 +14,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <!-- Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -106,21 +107,21 @@
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortRound&accessoriesType=Blank&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=PastelGreen&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Brown" alt="..." />
                     <h5>Sharath Pai</h5>
-                    <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                    <p class="font-weight-light mb-0">"Prevent unauthorized access to your private data. Share your private data or information with care. Ensure your safety now by using our free service."</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Sunglasses&hairColor=Black&facialHairType=Blank&clotheType=ShirtCrewNeck&clotheColor=Black&eyeType=Surprised&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Brown" alt="..." />
                     <h5>Shubhankar Haldia</h5>
-                    <p class="font-weight-light mb-0">"BetterCrypt is amazing. I've created it to secure your data."</p>
+                    <p class="font-weight-light mb-0">"Is someone watching you? Why feel scared when you can protect your data using BetterCrypt. BetterCrypt is my dream towards a digital world where you and your family are empowered with the knowledge of data protection and privacy."</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                     <img class="img-fluid rounded-circle mb-3" src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Wayfarers&hairColor=Black&facialHairType=Blank&facialHairColor=Red&clotheType=BlazerSweater&eyeType=Side&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Tanned" alt="..." />
                     <h5>Sayan Sahu</h5>
-                    <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                    <p class="font-weight-light mb-0">"In this digital age security and risk management of sensitive data should be the top most priority of businesses. Use our free resources to ensure the safety of your data."</p>
                 </div>
             </div>
         </div>
@@ -148,6 +149,8 @@
 <!-- Bootstrap core JS-->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 </body>

@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 
 @WebServlet(name = "EmailServlet", value = "/EmailServlet")
@@ -110,6 +111,7 @@ public class EmailServlet extends HttpServlet {
             System.out.println("Failed to delete the file.");
         }
 
+        request.setAttribute("success","Email Sent");
         RequestDispatcher rd = request.getRequestDispatcher("/image-encrypt.jsp");
         rd.forward(request, response);
 

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: Sharath
   Date: 26-04-2021
@@ -12,6 +12,24 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+<%
+    Object success = request.getAttribute("success");
+    if(success != null) {
+        out.println("<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <!-- Compiled and minified CSS -->\n" +
+                "    <link href=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css\" rel=\"stylesheet\" />\n" +
+                "    <title></title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<!-- Compiled and minified JavaScript -->\n" +
+                "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js\" ></script>\n" +
+                "<script src=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js\"></script>\n" +
+                "<script>toastr.success(\" "+success+"\", \"Success\");</script>\n" +
+                "</body>\n" +
+                "</html>");
+    }
+%>
 <div class="card mx-5 my-5" >
     <div class="card-body">
         <h5 class="card-title">Text Encryption</h5>
@@ -128,6 +146,12 @@
             return true;
         }
     }
+
+    function showToast() {
+        console.log("Toast ");
+        toastr.success('message', 'title');
+    }
+
     function generateUUID()
     {
         var d = new Date().getTime();

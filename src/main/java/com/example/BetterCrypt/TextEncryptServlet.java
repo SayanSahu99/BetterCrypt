@@ -7,13 +7,14 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Base64;
 
 @WebServlet(name = "TextEncryptServlet", value = "/TextEncryptServlet")
 public class TextEncryptServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        response.sendRedirect("text-encrypt.jsp");
     }
 
     @Override
@@ -39,6 +40,7 @@ public class TextEncryptServlet extends HttpServlet {
         System.out.println(AESEncryptedText);
         String ASCII_ENC = NinesComplimentText.encrypt(AESEncryptedText);
         System.out.println(ASCII_ENC);
+        request.setAttribute("success", "Text Encrypted");
         request.setAttribute("encrypted_text", ASCII_ENC);
         RequestDispatcher rd = request.getRequestDispatcher("/text-encrypt.jsp");
         rd.forward(request, response);

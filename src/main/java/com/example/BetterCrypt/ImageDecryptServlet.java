@@ -79,11 +79,11 @@ public class ImageDecryptServlet extends HttpServlet {
         } catch (Exception e){
             e.printStackTrace();
             RequestDispatcher rd = request.getRequestDispatcher("/image-decrypt.jsp");
-            request.setAttribute("error", "Key is wrong");
+            request.setAttribute("error", "The key doesn't match with the image");
             rd.forward(request, response);
         }
 
-
+        request.setAttribute("success", "Image Decrypted");
         RequestDispatcher rd = request.getRequestDispatcher("/image-decrypt.jsp");
         request.setAttribute("error", null);
         rd.forward(request, response);

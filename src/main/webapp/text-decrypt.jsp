@@ -15,11 +15,38 @@
 <%
     Object error = request.getAttribute("error");
     if(error != null) {
-        out.println("<div class=\"alert alert-danger\" role=\"alert\">");
-        out.println(error);
-        out.println("</div>");
+        out.println("\n" +
+                "\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <!-- Compiled and minified CSS -->\n" +
+                "    <link href=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css\" rel=\"stylesheet\" />\n" +
+                "    <title></title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js\" ></script>\n" +
+                "<script src=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js\"></script>\n" +
+                "<script>toastr.error(\" "+error+"\", \"Error\");</script>\n" +
+                "</body>\n" +
+                "</html>\n");
     }
-    error = null;
+
+    Object success = request.getAttribute("success");
+    if(success != null) {
+        out.println("<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <!-- Compiled and minified CSS -->\n" +
+                "    <link href=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css\" rel=\"stylesheet\" />\n" +
+                "    <title></title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<!-- Compiled and minified JavaScript -->\n" +
+                "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js\" ></script>\n" +
+                "<script src=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js\"></script>\n" +
+                "<script>toastr.success(\" "+success+"\", \"Success\");</script>\n" +
+                "</body>\n" +
+                "</html>");
+    }
 %>
 <div class="card mx-5 my-5" >
     <div class="card-body">

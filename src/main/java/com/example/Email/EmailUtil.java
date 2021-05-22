@@ -234,7 +234,7 @@ public class EmailUtil {
                 "                        <tr>\n" +
                 "                          <td style=\"padding-right: 0px;padding-left: 0px;\" align=\"center\">\n" +
                 "\n" +
-                "                            <img align=\"center\" border=\"0\" src=\"../../../../webapp/assets/img/image-4.png\" alt=\"Image\" title=\"Image\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 300%;max-width: 300px;\" width=\"300\"/>\n" +
+                "                            <img align=\"center\" border=\"0\" src=\"https://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-4.png?raw=true\" alt=\"Image\" title=\"Image\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 300%;max-width: 300px;\" width=\"300\"/>\n" +
                 "\n" +
                 "                          </td>\n" +
                 "                        </tr>\n" +
@@ -275,7 +275,7 @@ public class EmailUtil {
                 "                        <tr>\n" +
                 "                          <td style=\"padding-right: 0px;padding-left: 0px;\" align=\"center\">\n" +
                 "\n" +
-                "                            <img align=\"center\" border=\"0\" src=\"../../../../webapp/assets/img/image-1.png\" alt=\"Image\" title=\"Image\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 10%;max-width: 58px;\" width=\"58\"/>\n" +
+                "                            <img align=\"center\" border=\"0\" src=\"https://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-1.png?raw=true\" alt=\"Image\" title=\"Image\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 10%;max-width: 58px;\" width=\"58\"/>\n" +
                 "\n" +
                 "                          </td>\n" +
                 "                        </tr>\n" +
@@ -430,7 +430,7 @@ public class EmailUtil {
                 "                          <table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"32\" height=\"32\" style=\"border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 15px\">\n" +
                 "                            <tbody><tr style=\"vertical-align: top\"><td align=\"left\" valign=\"middle\" style=\"word-break: break-word;border-collapse: collapse !important;vertical-align: top\">\n" +
                 "                              <a href=\" https://www.facebook.com/shubhankar.haldia.1\" title=\"Facebook\" target=\"_blank\">\n" +
-                "                                <img src=\"../../../../webapp/assets/img/image-2.png\" alt=\"Facebook\" title=\"Facebook\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
+                "                                <img src=\"https://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-2.png?raw=true\" alt=\"Facebook\" title=\"Facebook\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
                 "                              </a>\n" +
                 "                            </td></tr>\n" +
                 "                            </tbody></table>\n" +
@@ -440,7 +440,7 @@ public class EmailUtil {
                 "                          <table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"32\" height=\"32\" style=\"border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 15px\">\n" +
                 "                            <tbody><tr style=\"vertical-align: top\"><td align=\"left\" valign=\"middle\" style=\"word-break: break-word;border-collapse: collapse !important;vertical-align: top\">\n" +
                 "                              <a href=\" https://twitter.com/Shubhan71506563\" title=\"Twitter\" target=\"_blank\">\n" +
-                "                                <img src=\"../../../../webapp/assets/img/image-5.png\" alt=\"Twitter\" title=\"Twitter\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
+                "                                <img src=\"https://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-5.png?raw=true\" alt=\"Twitter\" title=\"Twitter\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
                 "                              </a>\n" +
                 "                            </td></tr>\n" +
                 "                            </tbody></table>\n" +
@@ -450,7 +450,7 @@ public class EmailUtil {
                 "                          <table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"32\" height=\"32\" style=\"border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 15px\">\n" +
                 "                            <tbody><tr style=\"vertical-align: top\"><td align=\"left\" valign=\"middle\" style=\"word-break: break-word;border-collapse: collapse !important;vertical-align: top\">\n" +
                 "                              <a href=\" https://www.instagram.com/shubhankarhaldia\" title=\"Instagram\" target=\"_blank\">\n" +
-                "                                <img src=\"../../../../webapp/assets/img/image-6.png\" alt=\"Instagram\" title=\"Instagram\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
+                "                                <img src=\"https://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-6.png?raw=truehttps://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-6.png?raw=truehttps://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-6.png?raw=true\" alt=\"Instagram\" title=\"Instagram\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
                 "                              </a>\n" +
                 "                            </td></tr>\n" +
                 "                            </tbody></table>\n" +
@@ -460,7 +460,7 @@ public class EmailUtil {
                 "                          <table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"32\" height=\"32\" style=\"border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px\">\n" +
                 "                            <tbody><tr style=\"vertical-align: top\"><td align=\"left\" valign=\"middle\" style=\"word-break: break-word;border-collapse: collapse !important;vertical-align: top\">\n" +
                 "                              <a href=\" https://in.linkedin.com/in/shubhankar-haldia-8b57b4202\" title=\"LinkedIn\" target=\"_blank\">\n" +
-                "                                <img src=\"../../../../webapp/assets/img/image-3.png\" alt=\"LinkedIn\" title=\"LinkedIn\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
+                "                                <img src=\"https://github.com/SayanSahu99/BetterCrypt/blob/main/src/main/webapp/assets/img/image-3.png?raw=true\" alt=\"LinkedIn\" title=\"LinkedIn\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\n" +
                 "                              </a>\n" +
                 "                            </td></tr>\n" +
                 "                            </tbody></table>\n" +

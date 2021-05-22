@@ -86,6 +86,7 @@ public class ImageEncryptServlet extends HttpServlet {
             System.out.println("Failed to delete the file.");
         }
 
+        request.setAttribute("success", "Image Encrypted");
         RequestDispatcher rd = request.getRequestDispatcher("/image-encrypt.jsp");
         rd.forward(request, response);
     }

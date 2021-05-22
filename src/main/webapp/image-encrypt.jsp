@@ -17,13 +17,39 @@
 <%
     Object error = request.getAttribute("error");
     if(error != null) {
-        out.println("<div class=\"alert alert-danger\" role=\"alert\">");
-        out.println(error);
-        out.println("</div>");
+        out.println("\n" +
+                "\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <!-- Compiled and minified CSS -->\n" +
+                "    <link href=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css\" rel=\"stylesheet\" />\n" +
+                "    <title></title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js\" ></script>\n" +
+                "<script src=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js\"></script>\n" +
+                "<script>toastr.error(\" "+error+"\", \"Error\");</script>\n" +
+                "</body>\n" +
+                "</html>\n");
     }
-    error = null;
-%>
 
+    Object success = request.getAttribute("success");
+    if(success != null) {
+        out.println("<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <!-- Compiled and minified CSS -->\n" +
+                "    <link href=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css\" rel=\"stylesheet\" />\n" +
+                "    <title></title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<!-- Compiled and minified JavaScript -->\n" +
+                "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js\" ></script>\n" +
+                "<script src=\"//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js\"></script>\n" +
+                "<script>toastr.success(\" "+success+"\", \"Success\");</script>\n" +
+                "</body>\n" +
+                "</html>");
+    }
+%>
 <!-- Modal -->
 <div class="modal fade" id="emailModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -65,7 +91,7 @@
                 <input name="floatingKey" type="password" class="form-control" id="floatingKey" placeholder="123456">
                 <label for="floatingKey">Secret Key</label>
             </div>
-            <button type="submit" class="btn btn-primary mt-4" >Download</button>
+            <button type="submit" class="btn btn-primary mt-4 mr-3" >Download</button>
             <button id="SendButton" type="button" class="btn btn-primary mt-4" onclick="return showModal();" data-bs-target="#emailModal">Send</button>
         </form>
     </div>
