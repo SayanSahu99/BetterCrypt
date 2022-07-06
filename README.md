@@ -1,3 +1,4 @@
-#Better Crypt
+# Better Crypt
 
-A website that encrypts and decrypts your files using 9's compliment method.
+## ABSTRACT
+The development of telecommunications technology and data storage using the computer has become a necessity because there are many jobs that can be completed quickly, accurately, and efficiently. The data transmission is relatively faster and cheaper, but on the contrary long-distance data transmission increases the risk that other users can tap into the network and alter the data. Hence, data security and privacy of data is very vital in the development of world of telecommunications and computers communicating through computer networks. This project used a cryptographic algorithm Advanced Encryption Standard (AES) and One Time Pad (OTP) to encrypt the file. The One Time Pad (OTP) was implemented using 9's compliment method. The merger is intended to cryptographic algorithms with low complexity is more than just using the existing cryptographic algorithms.
